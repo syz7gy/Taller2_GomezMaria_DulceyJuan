@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>taller2_parteb</name>
-	<description>Second semester work using SpringBoot for json files in an API</description>
+	<description>Third semester work using SpringBoot for json files in an API</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -52,6 +52,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
