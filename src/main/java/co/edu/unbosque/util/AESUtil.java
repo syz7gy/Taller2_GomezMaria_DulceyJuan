@@ -17,23 +17,17 @@ public class AESUtil {
 
 	private static final String ALGORITHM = "AES";
 	private static final String CYPHER_TYPE = "AES/CBC/PKCS5Padding";
-	
+
 	public static String encrypt(String text) {
-		String iv = "kjhskshieidkalsj";
-		String key = "llavede16caracte";
-		
+		String iv = "lkajsklajskalsks";
+		String key = "unaclavede16letr";
+
 		return encrypt(key, iv, text);
-	}
-	
-	public static String decrypt(String text) {
-		String iv = "kjhskshieidkalsj";
-		String key = "llavede16caracte";
-		
-		return decrypt(key, iv, text);
 	}
 
 	public static String encrypt(String key, String iv, String text) {
 		Cipher cipher = null;
+		byte[] encrypted = null;
 		try {
 			cipher = Cipher.getInstance(CYPHER_TYPE);
 		} catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
@@ -48,17 +42,23 @@ public class AESUtil {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		byte[] encrypted = null;
 		try {
 			encrypted = cipher.doFinal(text.getBytes());
 		} catch (IllegalBlockSizeException | BadPaddingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return new String(encodeBase64(encrypted));
 	}
-	
+
+	public static String decrypt(String text) {
+		String iv = "lkajsklajskalsks";
+		String key = "unaclavede16letr";
+
+		return decrypt(key, iv, text);
+	}
+
 	public static String decrypt(String key, String iv, String text) {
 		Cipher cipher = null;
 		try {
@@ -77,23 +77,15 @@ public class AESUtil {
 		}
 		byte[] encrypted = decodeBase64(text);
 		byte[] decrypted = null;
-		
+
 		try {
 			decrypted = cipher.doFinal(encrypted);
 		} catch (IllegalBlockSizeException | BadPaddingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return new String(decrypted);
 	}
 	
-//	public static void main(String[] args) {
-//		String text = "Berserk";
-//		String encrypted = encrypt(text);
-//		String decrypted = decrypt(encrypted);
-//		System.out.println(encrypted);
-//		System.out.println(decrypted);
-//	}
-
 }

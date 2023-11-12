@@ -10,30 +10,22 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="usergrade")
-public class User {
+@Table(name = "usergrades")
+public class UserGrade {
 	
-	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id;
-	
+	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY)Long id;
 	@Column(unique = true)
 	private String name;
+	private String grade1;
+	private String grade2;
+	private String grade3;
 	
-	private String grade1, grade2, grade3;
-	
-	public User() {
+	public UserGrade() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(Long id, String name, String grade1, String grade2, String grade3) {
+	public UserGrade(String name, String grade1, String grade2, String grade3) {
 		super();
-		this.id = id;
-		this.name = name;
-		this.grade1 = grade1;
-		this.grade2 = grade2;
-		this.grade3 = grade3;
-	}
-	
-	public User(String name, String grade1, String grade2, String grade3) {
 		this.name = name;
 		this.grade1 = grade1;
 		this.grade2 = grade2;
@@ -93,7 +85,7 @@ public class User {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		User other = (User) obj;
+		UserGrade other = (UserGrade) obj;
 		return Objects.equals(grade1, other.grade1) && Objects.equals(grade2, other.grade2)
 				&& Objects.equals(grade3, other.grade3) && Objects.equals(id, other.id)
 				&& Objects.equals(name, other.name);
@@ -101,17 +93,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", grade1=" + grade1 + ", grade2=" + grade2 + ", grade3=" + grade3
-				+ "]";
+		return "UserGrade [id=" + id + ", name=" + name + ", grade1=" + grade1 + ", grade2=" + grade2 + ", grade3="
+				+ grade3 + "]";
 	}
 
-	
-	
-	
-
-	
-	
-	
-	
-	
 }
