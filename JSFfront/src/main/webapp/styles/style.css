@@ -1,0 +1,64 @@
+#header {
+	text-align: center;
+	color: ghostwhite;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#wrapper {
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	margin: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 30px;
+
+}
+
+
+#wrapper2 input[type="text"] {
+	font-family: 'Arial', sans-serif;
+}
+
+#wrapper2 input[type="text"] {
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+}
+
+#wrapper2 h\:outputLabel {
+	font-family: 'MyFont', 'Arial', sans-serif;
+	color: #333;
+	font-size: 1.2em;
+}
+
+.green {
+	color: green;
+}
+
+.yellow {
+	color: yellow;
+}
+
+.red {
+	color: red;
+}
+
+#wrapper2 input[type="text"]:focus {
+	border-color: #3CBC8D !important;
+}
+
+
+#wrapper2 {
+	width: 100%;
+	height: 100%;
+	margin: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 30px;
+
+}

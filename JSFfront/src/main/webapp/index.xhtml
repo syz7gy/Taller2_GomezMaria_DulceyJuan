@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Formulario de notas</title>
+	<link rel="stylesheet" href="styles/style.css" />
+</h:head>
+<h:body>
+	<h:form id="noteForm" style="text-align: start">
+		<p:messages id="messages" showDetail="true" autoUpdate="true"
+			closable="true"
+			styleClass="#{AdminBean.result >= 3.0 ? 'green' : (AdminBean.result == 3.0 ? 'yellow' : 'red')}" />
+
+
+		<div id="wrapper">
+			<div id="header">
+				<h1>NOTAS</h1>
+				<h5></h5>
+			</div>
+		</div>
+
+		<br></br>
+
+		<div id="wrapper2">
+			<h:form id="dialogForm">
+				<h:outputLabel for="name" value="Nombre:" />
+				<h:inputText id="name" value="#{AdminBean.name}" required="true"
+					requiredMessage="Por favor, ingresa un nombre." />
+				<br></br>
+				<br></br>
+
+				<h:outputLabel for="grade1" value="Primera nota:" />
+				<h:inputText id="grade1" value="#{AdminBean.grade1}" required="true"
+					requiredMessage="Por favor, ingresa la primera nota.">
+					<f:convertNumber integerOnly="true" />
+				</h:inputText>
+				<br></br>
+				<br></br>
+
+				<h:outputLabel for="grade2" value="Segunda nota:" />
+				<h:inputText id="grade2" value="#{AdminBean.grade2}" required="true"
+					requiredMessage="Por favor, ingresa la segunda nota.">
+					<f:convertNumber integerOnly="true" />
+				</h:inputText>
+				<br></br>
+				<br></br>
+
+				<h:outputLabel for="grade3" value="Tercera nota:" />
+				<h:inputText id="grade3" value="#{AdminBean.grade3}" required="true"
+					requiredMessage="Por favor, ingresa la tercera nota.">
+					<f:convertNumber integerOnly="true" />
+				</h:inputText>
+				<br></br>
+				<br></br>
+
+				<p:commandButton value="Agregar" ajax="false"
+					actionListener="#{AdminBean.addNote}" update="sticky-key" />
+				<p:commandButton value="Mostrar" ajax="false"
+					actionListener="#{AdminBean.showNote}" update="sticky-key" />
+			</h:form>
+
+			<p:ajaxStatus styleClass="p-d-block p-mb-4">
+				<f:facet name="default">
+				</f:facet>
+
+				<f:facet name="start">
+					<i class="pi pi-spin pi-spinner loading-icon" aria-hidden="true"
+						style="font-size: 2rem"></i>
+				</f:facet>
+
+				<f:facet name="complete">
+				</f:facet>
+
+
+			</p:ajaxStatus>
+		</div>
+	</h:form>
+
+</h:body>
+</html>
